@@ -60,10 +60,36 @@
 #### Pattern
 
 - A condition can compare a string to a pattern by:
-  -  <Attribute> LIKE <pattern> or 
-  -  <Attribute> NOT LIKE <pattern>
+  -  Attribute LIKE pattern or 
+  -  Attribute NOT LIKE pattern
     
 ```sql
    SELECT * FROM Employees WHERE name LIKE 'A%';
 ```
+#### NULL values
+
+- Missing value : e.g., we know a customer has some address, but we don’t know what it is.
+- Inapplicable : e.g., the value of attribute name of spouse for an unmarried person.
+
+#### Comparing NULLs to values
+
+- The logic of conditions in SQL is really 3-valued logic: TRUE, FALSE, UNKNOWN.
+- Comparing any value (including NULL itself) with NULL yields UNKNOWN.
+- A tuple is in a query answer if and only if the WHERE clause is TRUE (not FALSE or UNKNOWN).
+
+#### Three-Valued Logic
+
+<img width="785" alt="image" src="https://github.com/user-attachments/assets/e9c61e3a-8220-4b4f-8c42-6f718e5f80f7">
+
+- 2-Valued Laws != 3-Valued Laws
+- See details in [here](logic.md)
+
+#### Multiiteration Queries
+
+- Distinguish attributes of the same name by <relation>.<attribute>
+
+
+
+
+
 

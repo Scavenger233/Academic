@@ -86,7 +86,14 @@
 
 #### Multiiteration Queries
 
-- Distinguish attributes of the same name by <relation>.<attribute>
+- Distinguish attributes of the same name by **relation.attribute**
+
+```
+SELECT Employees.name, Departments.name
+FROM Employees, Departments;
+```
+
+
 
 
 

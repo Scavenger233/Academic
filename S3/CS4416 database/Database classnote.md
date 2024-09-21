@@ -14,9 +14,9 @@
 
 #### Constraints
 - names/identifiers:
- - no longer than 128 characters
- - must start with a letter
- - contain no spaces
+  - no longer than 128 characters
+  - must start with a letter
+  - contain no spaces
   
 #### SQL data types
   - Boolean: BOOLEAN

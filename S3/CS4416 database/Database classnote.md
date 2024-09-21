@@ -63,7 +63,7 @@
     - <Attribute> LIKE <pattern> or 
     - <Attribute> NOT LIKE <pattern>
     
-  ```sql
+```sql
    SELECT * FROM Employees WHERE name LIKE 'A%';
-   ```
+```
 

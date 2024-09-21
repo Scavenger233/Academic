@@ -8,16 +8,26 @@
 
 #### SQL
 
+##### Definition
 - primarily a query language
 - also a data definition component
+
+##### Constraints
 - names/identifiers: 1.no longer than 128 characters 2.must start with a letter 3.contain no spaces
-- **SQL data types**
+  
+##### SQL data types
   - Boolean: BOOLEAN
   - Character: 
-     - CHAR(n ) = fixed-length string of n  characters.
-     - VARCHAR(n ) = variable-length string of up to n  characters.
+     - CHAR(n ) = **fixed-length** string of n  characters.
+     - VARCHAR(n ) = **variable-length** string of up to n  characters.
   - Numeric: NUMERIC, DECIMAL, INTEGER, SMALLINT, FLOAT, REAL, DOUBLE PRECISION
   - Datetime: DATE, TIME, TIMESTAMP
+
+##### Values
+- Integers and reals (i.e. floating point numbers) are represented as you would expect
+- Strings are too, except they require single quotes
+- Any value can be **NULL**
+
 
 
 

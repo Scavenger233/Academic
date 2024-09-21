@@ -31,9 +31,13 @@
 - Strings are too, except they require single quotes
 - Any value can be **NULL**
 
-
-
-
 ### Schemas
 
 - A database schema is structure that represents the logical storage of the data in a database.
+
+### Primary Key/Unique
+
+- There can be only one PRIMARY KEY for a relation, but several UNIQUE attributes.
+- No attribute of a PRIMARY KEY can ever be NULL in any tuple.  But attributes declared UNIQUE may have NULL values, and there may be several tuples with NULL.
+
+ <img width="859" alt="image" src="https://github.com/user-attachments/assets/44579857-c124-4a73-8d47-6b190b3a88eb">

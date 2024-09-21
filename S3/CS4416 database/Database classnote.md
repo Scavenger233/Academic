@@ -11,7 +11,7 @@
 - primarily a query language
 - also a data definition component
 - names/identifiers: 1.no longer than 128 characters 2.must start with a letter 3.contain no spaces
-- SQL data types:
+- **SQL data types**
   - Boolean: BOOLEAN
   - Character: 
      - CHAR(n ) = fixed-length string of n  characters.

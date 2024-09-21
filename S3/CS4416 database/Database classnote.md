@@ -57,5 +57,15 @@
   - Apply the selection indicated by the WHERE clause.
   - Apply the projection indicated by the SELECT clause.
 
+#### Pattern
 
+- A condition can compare a string to a pattern by:
+    - <Attribute> LIKE <pattern> or 
+    - <Attribute> NOT LIKE <pattern>
+例如：
+
+sql
+复制代码
+SELECT * FROM Employees WHERE name LIKE 'A%';
+这条查询会返回所有名字以字母 "A" 开头的员工。
 

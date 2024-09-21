@@ -60,8 +60,8 @@
 #### Pattern
 
 - A condition can compare a string to a pattern by:
-    -  <Attribute> LIKE <pattern> or 
-    -  <Attribute> NOT LIKE <pattern>
+  - <Attribute> LIKE <pattern> or 
+  - <Attribute> NOT LIKE <pattern>
     
 ```sql
    SELECT * FROM Employees WHERE name LIKE 'A%';

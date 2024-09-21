@@ -41,3 +41,21 @@
 - No attribute of a PRIMARY KEY can ever be NULL in any tuple.  But attributes declared UNIQUE may have NULL values, and there may be several tuples with NULL.
 
  <img width="859" alt="image" src="https://github.com/user-attachments/assets/44579857-c124-4a73-8d47-6b190b3a88eb">
+
+# Week 2
+
+## SQL statements
+
+### SELECT
+<img width="792" alt="image" src="https://github.com/user-attachments/assets/6d6eb3ef-254c-4398-8649-19557b6470f9">
+
+- Result of query
+  - <img width="782" alt="image" src="https://github.com/user-attachments/assets/2335b724-5516-4166-8d8a-b59aa1790965">
+
+- Meaning of Single-Relation Query
+  - Begin with the relation in the FROM clause.
+  - Apply the selection indicated by the WHERE clause.
+  - Apply the projection indicated by the SELECT clause.
+
+
+

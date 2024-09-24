@@ -60,10 +60,10 @@ SELECT * FROM Customers	WHERE city = 'Limerick';
   - Apply the selection indicated by the WHERE clause.
   - Apply the projection indicated by the SELECT clause.
  
-    ```
+```
     SELECT model, price*1.4 AS priceUSD
     FROM PCs;
-    ```
+```
 
 
 #### Pattern

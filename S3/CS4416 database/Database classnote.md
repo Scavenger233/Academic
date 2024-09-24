@@ -47,7 +47,10 @@
 ## SQL statements
 
 ### SELECT
-<img width="792" alt="image" src="https://github.com/user-attachments/assets/6d6eb3ef-254c-4398-8649-19557b6470f9">
+
+```
+SELECT * FROM Customers	WHERE city = 'Limerick';
+```
 
 - Result of query
   - <img width="782" alt="image" src="https://github.com/user-attachments/assets/2335b724-5516-4166-8d8a-b59aa1790965">

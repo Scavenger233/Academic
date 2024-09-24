@@ -11,4 +11,7 @@
 - **Error**: An *incorrect internal state* that is the manifestation of some *fault*
 - **Failure**:An *incorrect external behaviour* with respect to the requirements or another description of the expected behaviour
 
+- **Verification:** To ensure that the product is meets its requirements
+- **Validation:** To ensure that the product meets the user’s needs
+
 

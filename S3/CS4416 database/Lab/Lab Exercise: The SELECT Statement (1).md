@@ -10,6 +10,10 @@ Write SQL SELECT statements for performing the following queries:
   SELECT * FROM products where maker LIKE 'B';
 ```
 - List the model numbers of all products not made by maker B.
+```
+
+
+
 - List the model numbers of all PCs with speed >= 3.00.
 - List the model numbers of all color laser printers.
 - List the customer IDs of all customers who paid for a product with a Visa card (debit or credit).

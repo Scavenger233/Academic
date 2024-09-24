@@ -7,8 +7,8 @@
 # Week 2
 
 ## Terminology
-- **Fault**:A static defect in the software
-- **Error**: An incorrect internal state that is the manifestation of some fault
-- **Failure**:An incorrect external behaviour with respect to the requirements or another description of the expected behaviour
+- **Fault**:A *static defect* in the software
+- **Error**: An *incorrect internal state* that is the manifestation of some *fault*
+- **Failure**:An *incorrect external behaviour* with respect to the requirements or another description of the expected behaviour
 
 

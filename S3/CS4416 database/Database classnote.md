@@ -56,6 +56,12 @@
   - Begin with the relation in the FROM clause.
   - Apply the selection indicated by the WHERE clause.
   - Apply the projection indicated by the SELECT clause.
+ 
+    ```
+    SELECT model, price*1.4 AS priceUSD
+    FROM PCs;
+    ```
+
 
 #### Pattern
 

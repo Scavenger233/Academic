@@ -48,7 +48,7 @@
 
 ### SELECT
 
-```
+```sql
 SELECT * FROM Customers	WHERE city = 'Limerick';
 ```
 
@@ -60,7 +60,7 @@ SELECT * FROM Customers	WHERE city = 'Limerick';
   - Apply the selection indicated by the WHERE clause.
   - Apply the projection indicated by the SELECT clause.
  
-```
+```sql
     SELECT model, price*1.4 AS priceUSD
     FROM PCs;
 ```
@@ -97,10 +97,42 @@ SELECT * FROM Customers	WHERE city = 'Limerick';
 
 - Distinguish attributes of the same name by **relation.attribute**
 
-```
+```sql
 SELECT Employees.name, Departments.name
 FROM Employees, Departments;
 ```
+
+## Week 3
+### SELECT
+
+- 去重
+```sql
+SELECT DISTINCT name FROM WHERE Customers.customer_is = Sales.customer_id AND city = 'Limerick" AND day = '2015-12-20';
+```
+
+- JOIN
+<img width="599" alt="image" src="https://github.com/user-attachments/assets/2af34cc2-9ed5-4720-811b-1709fb926a90">
+
+```sql
+table1 JOIN table2 ON condition
+/* combine date from 2 tables */
+
+table1 LEFT JOIN table2 ON condition
+/* Similar to JOIN but if a row in table1 has no match in table2 then it is matched with a row containing NULL values */
+
+table1 RIGHT JOIN table2 ON condition /* is equal to */ table2 RIGHT JOIN table1 ON condition
+
+table1 FULL JOIN table2 ON condition
+/* 左右表都保留，返回左表和右表的所有记录，匹配的行会成对，不匹配的行会与NULL值进行匹配。*/
+
+table1 JOIN table2 USING (a1, a2,...,an)
+/*To check both tables contains a1, a2,...
+  only one copy is present in the value*/
+
+table1 NATURAL JOIN table2
+/* same as above but find the same a1, a2 automatically*/
+```
+
 
 
 

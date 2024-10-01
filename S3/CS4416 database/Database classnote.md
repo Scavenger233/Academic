@@ -131,13 +131,100 @@ table1 JOIN table2 USING (a1, a2,...,an)
 
 table1 NATURAL JOIN table2
 /* same as above but find the same a1, a2 automatically*/
+
+	SELECT c1.customer_id, c2.customer_id
+	FROM Customers c1, Customers c2
+	WHERE c1.city = c2.city AND
+		  c1.customer_id < c2.customer_id;
+/* Produce pairs in ascending (or alphabetic) order */
+
+```
+### Subqueries
+
+A parenthesized SELECT-FROM-WHERE statement(***subquery***) can be used as a value in a number of places, including **FROM** and **WHERE** clause.
+
+- **Must** use a tuple-variable to name tuples of the result.
+
+#### Subqueries in WHERE
+
+```sql
+  SELECT model
+		FROM Products JOIN PCs USING(model)
+		WHERE maker = 'A' AND speed >= 2.0;
+
+/* Equals to */
+
+  SELECT model
+  FROM Products JOIN
+       (SELECT model FROM PCs WHERE speed >= 2.0) atleast2
+       USING(model)
+  WHERE maker = 'A';
 ```
 
+#### Subqueries in FROM
 
+- The tuple must has one component.
+- A run-time error occurs if there is no tuple or more than one tuple.
+  
+Using Customers, find the names of all customers from Limerick who have the same lastname as the customer with ID 1111111111.
+Two queries would surely work:
+1. Find the lastname of customer 1111111111 (say it is Ryan)
+2. Find the names of those customers from Limerick who have the same lastname (i.e. Ryan).
+```sql
+  SELECT firstname, lastname
+	FROM customers
+	WHERE city = 'Limerick' AND
+		       lastname = (SELECT lastname
+			     	           FROM customers
+			             	   WHERE customer_id='1111111111');
+```
 
+#### The IN Operator
 
+- <tuple> IN (<subquery>) is true if and only if the tuple is a member of the relation produced by the subquery.
+  - Opposite: <tuple> NOT IN (<subquery>).
+- IN-expressions can appear in **WHERE** clauses.
 
+```sql
+SELECT model
+	   FROM Products
+	   WHERE maker = 'B' AND
+		          model IN (SELECT model
+			          	     FROM PCs
+			                 WHERE speed >= 2.0 AND
+                                                       speed <= 2.8);
+```
 
+#### The Exists Operator
+
+- EXISTS(<subquery>) is true if and only if the subquery result is **not empty**.
+- Example: From Customers, find the IDs of those customers whose first names are unique, i.e. no other customer has the same first name.
+```sql
+	SELECT customer_id
+	FROM Customers c1
+	WHERE NOT EXISTS (
+		SELECT *
+		FROM Customers
+		WHERE firstname = c1.firstname AND
+			    customer_id <> c1.customer_id);
+```
+
+#### The Operators ANY and ALL
+
+- x = ANY(<subquery>) is a Boolean condition that is true if and only if x equals at least one tuple in the subquery result.
+  - = could be any comparison operator.
+- x <> ALL(<subquery>) is true if and only if x is different from all tuples in the subquery result.
+  - <> can be any comparison operator.
+ 
+- From PCs find the fastest PC model(s) with hd less than or equal to 250.
+```sql
+SELECT model
+	FROM PCs
+	WHERE hd <= 250 AND
+                   speed >= ALL(SELECT speed
+			                      FROM PCs
+                                            WHERE hd <= 250);
+```
 
 
 

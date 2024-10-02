@@ -58,17 +58,36 @@ WHERE laptops.speed = (
 ```
 - f. List the cities with customers who bought a printer.
 ```sql
-
+SELECT DISTINCT c.city
+FROM customers c
+JOIN sales s ON c.customer_id = s.customer_id
+WHERE s.model IN (
+    SELECT model
+    FROM products
+    WHERE type = 'printer'
+);
 ```
-
 - g. List the makers of PCs that don't make any laptop (but may make printers)
 ```sql
-
+SELECT DISTINCT p.maker
+FROM products p
+WHERE p.type = 'pc'
+AND p.maker NOT IN (
+    SELECT DISTINCT p2.maker
+    FROM products p2
+    WHERE p2.type = 'laptop'
+);
 ```
-
 - h. List the makers of PCs that don't make any laptop or printer
 ```sql
-
+SELECT DISTINCT p.maker
+FROM products p
+WHERE p.type = 'pc'
+AND p.maker NOT IN (
+    SELECT DISTINCT p2.maker
+    FROM products p2
+    WHERE p2.type IN ('laptop', 'printer')
+);
 ```
 
 - i. List the model numbers and prices of laptops which are cheaper than at least one PC

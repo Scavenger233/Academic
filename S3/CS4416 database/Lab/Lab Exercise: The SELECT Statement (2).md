@@ -11,6 +11,11 @@ The goal of this exercise is to practice joins and subqueries in the SQL SELECT 
 4. Write SQL SELECT statements for performing the following queries. Use either a join or a subquery. If a question is asking to include attributes from one table only in the SELECT clause of the SELECT statement, try to find two solutions, one with a join, and another with a subquery.
 
 - a. List all PC models that have been sold at least once.
+```sql
+SELECT DISTINCT pcs.model
+FROM pcs
+JOIN sales ON sales.model = pcs.model;
+```
 
 - b. List the makers of laptops with speed of at least 2.00.
 

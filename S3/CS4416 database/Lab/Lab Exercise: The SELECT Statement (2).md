@@ -1,6 +1,7 @@
 ## Task
 
 The goal of this exercise is to practice joins and subqueries in the SQL SELECT statement.
+<img width="857" alt="image" src="https://github.com/user-attachments/assets/f8849896-5674-44ec-8933-7a1a4bdc6238">
 
 1. Review the slides of Lecture 5.
 
@@ -33,17 +34,47 @@ WHERE p1.model < p2.model;
 
 - d. List the makers that make at least two different models of PC.
 ```sql
+SELECT maker
+FROM products p1
+WHERE p1.type = 'pc'
+AND EXISTS (
+    SELECT 1
+    FROM products p2
+    WHERE p2.maker = p1.maker
+    AND p2.model <> p1.model
+    AND p2.type = 'pc'
+);
 
 ```
 - e. List the maker(s) of the laptop(s) with the highest available speed.
-
+```sql
+SELECT DISTINCT products.maker
+FROM products
+JOIN laptops ON products.model = laptops.model
+WHERE laptops.speed = (
+    SELECT MAX(speed)
+    FROM laptops
+);
+```
 - f. List the cities with customers who bought a printer.
+```sql
+
+```
 
 - g. List the makers of PCs that don't make any laptop (but may make printers)
+```sql
+
+```
 
 - h. List the makers of PCs that don't make any laptop or printer
+```sql
+
+```
 
 - i. List the model numbers and prices of laptops which are cheaper than at least one PC
+```sql
+
+```
 
 5. Write SQL SELECT statements which use outer joins for performing the following queries.
 

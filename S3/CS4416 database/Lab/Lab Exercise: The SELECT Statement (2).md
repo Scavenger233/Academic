@@ -16,13 +16,25 @@ SELECT DISTINCT pcs.model
 FROM pcs
 JOIN sales ON sales.model = pcs.model;
 ```
-
 - b. List the makers of laptops with speed of at least 2.00.
+```sql
+SELECT DISTINCT products.maker FROM products
+JOIN laptops ON laptops.model = products.model
+WHERE laptops.speed >= 2 AND products.type = 'laptop';
+```
 
 - c. List all pairs of PC models that have both the same speed and ram. A pair should be listed only once; e.g., list (i, j) but not (j, i).
+```sql
+SELECT p1.model, p2.model
+FROM pcs p1
+JOIN pcs p2 ON p1.speed = p2.speed AND p1.ram = p2.ram
+WHERE p1.model < p2.model;
+```
 
 - d. List the makers that make at least two different models of PC.
+```sql
 
+```
 - e. List the maker(s) of the laptop(s) with the highest available speed.
 
 - f. List the cities with customers who bought a printer.

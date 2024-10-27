@@ -36,6 +36,17 @@
 
 <img width="1169" alt="image" src="https://github.com/user-attachments/assets/fd00b634-dca2-4953-bcd0-81396030a705">
 
+# Week 4
+
+## The life cycle of a bug
+
+## Debugging and Tersting
+
+- Debugging: the process of finding a fault given a faliure
+  - Determine the nature and location of the bug in the code
+  - Fix the code to remove the error
+
+<img width="1219" alt="image" src="https://github.com/user-attachments/assets/4e7a16a4-cf66-44c7-8ae3-776361062893">
 
 
 

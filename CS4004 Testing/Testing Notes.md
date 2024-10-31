@@ -13,7 +13,7 @@
 
 - **Verification:** To ensure that the product is meets its requirements
 - **Validation:** To ensure that the product meets the user’s needs
-- **Independent V&V - IV&V:** the evaluationwas done by someone else than the developers of the software
+- **Independent V&V - IV&V:** the evaluation was done by someone else than the developers of the software
 
 # Week 3
 
@@ -52,7 +52,7 @@
 - **After Discovery**: The bug progresses through stages: **New, Assigned, Open, Fixed, Pending Retest, Verified, and Closed**. Some bugs may be marked as **Duplicate, Rejected, or Deferred** if not addressed immediately.
 
 
-## Debugging and Tersting
+## Debugging and Testing
 
 - **Debugging**: the process of finding a fault given a faliure
   - Determine the nature and location of the bug in the code
@@ -72,19 +72,19 @@ Key activities include **Reproducing, Isolating, Generalizing, Summarizing, Cond
    - These include **test design** (requirement alignment, test coverage, traceability), **automation** (efficiency, environment management), **execution** (running tests, failure identification), and **evaluation** (test summary, analysis, bug tracking).
 
 2. **Test Automation**:
-   - Automation helps control test execution, compare actual outcomes with expected outcomes, and reduce costs and human error, making it especially useful for regression testing.
+   - Automation helps control test execution, **compare** **actual** outcomes with **expected** outcomes, and reduce costs and human error, making it especially useful for **regression testing**.
 
 3. **Software Testability**:
    - Defined by **controllability** (ease of input provision) and **observability** (ease of monitoring system behavior). High testability implies software that’s easier to test due to accessible inputs and observable outcomes.
 
 4. **Test Coverage Criteria**:
-   - A coverage criterion is a rule that helps define test requirements, such as covering all statements or functional requirements. Criteria help identify a subset of important tests from all possible tests.
+   - A coverage criterion is a rule that helps **define test requirements**, such as covering all statements or functional requirements. Criteria help identify a subset of important tests from all possible tests.
 
 5. **Examples of Coverage**:
    - Using examples like jelly bean flavors and colors, the lecture illustrates how coverage criteria ensure completeness in testing, such as tasting every flavor versus tasting every color.
 
 6. **Criteria-Based Test Design**:
-   - Criteria are applied by either directly generating test values that satisfy the criterion or using a separate method to generate tests and then measuring coverage against the criterion.
+   - Criteria are applied by either directly **generating test values** that satisfy the criterion or **using a separate method to generate tests** and then measuring coverage against the criterion.
    - Coverage level is calculated by the percentage of test requirements satisfied by the test set.
 
 7. **Generators and Recognizers**:
@@ -104,16 +104,16 @@ Criteria-based testing emphasizes methodical test design, aiming to maximize tes
 Here’s a summary of the key points and exam highlights from the lecture on "Functional Testing":
 
 1. **What is Functional Testing**:
-   - Functional testing derives test cases from software specifications, focusing on testing system behavior as defined by functional requirements.
-   - It’s also known as specification-based or black-box testing, where the internal code is not directly examined.
+   - Functional testing derives test cases from **software specification**s, focusing on testing system behavior as defined by functional requirements.
+   - It’s also known as **specification-based** or **black-box testing**, where the internal code is not directly examined.
 
 2. **Random vs. Systematic Testing**:
    - **Random Testing** involves randomly selecting inputs but can be ineffective at finding rare issues.
    - **Systematic Testing** (often used in functional testing) carefully selects inputs, especially targeting cases likely to reveal faults, like boundary values.
 
 3. **Equivalence Class Partitioning**:
-   - Partitioning the input space into equivalence classes (ECs) allows testers to select representative test cases from each class.
-   - This approach improves test coverage by focusing on “dense” areas of the input space where faults are likely to occur, especially around boundaries.
+   - Partitioning the input space into equivalence classes (ECs) allows testers to **select representative test cases** from each class.
+   - This approach improves test coverage by **focusing** on “dense” areas of the input space **where faults are likely to occur**, especially around boundaries.
 
 4. **Why Use Functional Testing**:
    - Functional testing effectively identifies missing logic errors, is cost-effective, and can be applied at various levels (e.g., unit, integration, and system).

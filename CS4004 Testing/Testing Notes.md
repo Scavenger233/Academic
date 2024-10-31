@@ -13,6 +13,7 @@
 
 - **Verification:** To ensure that the product is meets its requirements
 - **Validation:** To ensure that the product meets the user’s needs
+- **Independent V&V - IV&V:** the evaluationwas done by someone else than the developers of the software
 
 # Week 3
 
@@ -26,23 +27,35 @@
  
 ## The fault failure model
 
-- Reachability: The location or locations in the program that contain the fault must be reached
-- Infection: The state of the program must be incorrect
-- Propagation: The infected state must cause some output or final state of the
-- Reveal: The tester must observe part of the incorrect portion of the program state
+- **Reachability**: The location or locations in the program that contain the fault must be reached
+- **Infection**: The state of the program must be incorrect
+- **Propagation**: The infected state must cause some output or final state of the
+- **Reveal**: The tester must observe part of the incorrect portion of the program state
 
 ## Software Testing Levels
 <img width="1189" alt="image" src="https://github.com/user-attachments/assets/65d36e5e-d08e-47da-8764-b11863f78a1f">
 
 <img width="1169" alt="image" src="https://github.com/user-attachments/assets/fd00b634-dca2-4953-bcd0-81396030a705">
 
+## Types of Testing
+
+**White Box Testing**: Tester knows the internal structure.
+**Black Box Testing**: Tester doesn’t see the internal structure.
+**Regression Testing**: Ensures functionality after changes.
+**Stress Testing**: Tests system’s robustness under high load.
+
+
 # Week 4
 
 ## The life cycle of a bug
 
+**Before Discovery**: A human error creates a fault in the system, leading to a failure observed during testing.
+**After Discovery**: The bug progresses through stages: **New, Assigned, Open, Fixed, Pending Retest, Verified, and Closed**. Some bugs may be marked as **Duplicate, Rejected, or Deferred** if not addressed immediately.
+
+
 ## Debugging and Tersting
 
-- Debugging: the process of finding a fault given a faliure
+- **Debugging**: the process of finding a fault given a faliure
   - Determine the nature and location of the bug in the code
   - Fix the code to remove the error
 

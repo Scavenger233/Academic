@@ -75,7 +75,7 @@ Key activities include **Reproducing, Isolating, Generalizing, Summarizing, Cond
    - Automation helps control test execution, compare actual outcomes with expected outcomes, and reduce costs and human error, making it especially useful for regression testing.
 
 3. **Software Testability**:
-   - Defined by controllability (ease of input provision) and observability (ease of monitoring system behavior). High testability implies software that’s easier to test due to accessible inputs and observable outcomes.
+   - Defined by **controllability** (ease of input provision) and **observability** (ease of monitoring system behavior). High testability implies software that’s easier to test due to accessible inputs and observable outcomes.
 
 4. **Test Coverage Criteria**:
    - A coverage criterion is a rule that helps define test requirements, such as covering all statements or functional requirements. Criteria help identify a subset of important tests from all possible tests.

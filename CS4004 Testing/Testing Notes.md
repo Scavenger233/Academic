@@ -38,19 +38,18 @@
 <img width="1169" alt="image" src="https://github.com/user-attachments/assets/fd00b634-dca2-4953-bcd0-81396030a705">
 
 ## Types of Testing
-
-**White Box Testing**: Tester knows the internal structure.
-**Black Box Testing**: Tester doesn’t see the internal structure.
-**Regression Testing**: Ensures functionality after changes.
-**Stress Testing**: Tests system’s robustness under high load.
+- **White Box Testing**: Tester knows the internal structure.
+- **Black Box Testing**: Tester doesn’t see the internal structure.
+- **Regression Testing**: Ensures functionality after changes.
+- **Stress Testing**: Tests system’s robustness under high load.
 
 
 # Week 4
 
 ## The life cycle of a bug
 
-**Before Discovery**: A human error creates a fault in the system, leading to a failure observed during testing.
-**After Discovery**: The bug progresses through stages: **New, Assigned, Open, Fixed, Pending Retest, Verified, and Closed**. Some bugs may be marked as **Duplicate, Rejected, or Deferred** if not addressed immediately.
+- **Before Discovery**: A human error creates a fault in the system, leading to a failure observed during testing.
+- **After Discovery**: The bug progresses through stages: **New, Assigned, Open, Fixed, Pending Retest, Verified, and Closed**. Some bugs may be marked as **Duplicate, Rejected, or Deferred** if not addressed immediately.
 
 
 ## Debugging and Tersting

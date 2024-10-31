@@ -97,3 +97,38 @@ Key activities include **Reproducing, Isolating, Generalizing, Summarizing, Cond
    - Software structures, such as graphs, logical expressions, and syntactic structures, are modeled from software artifacts and used to guide test design.
 
 Criteria-based testing emphasizes methodical test design, aiming to maximize test efficiency and effectiveness by focusing on specific coverage targets.
+
+
+# Week 7 
+
+Here’s a summary of the key points and exam highlights from the lecture on "Functional Testing":
+
+1. **What is Functional Testing**:
+   - Functional testing derives test cases from software specifications, focusing on testing system behavior as defined by functional requirements.
+   - It’s also known as specification-based or black-box testing, where the internal code is not directly examined.
+
+2. **Random vs. Systematic Testing**:
+   - **Random Testing** involves randomly selecting inputs but can be ineffective at finding rare issues.
+   - **Systematic Testing** (often used in functional testing) carefully selects inputs, especially targeting cases likely to reveal faults, like boundary values.
+
+3. **Equivalence Class Partitioning**:
+   - Partitioning the input space into equivalence classes (ECs) allows testers to select representative test cases from each class.
+   - This approach improves test coverage by focusing on “dense” areas of the input space where faults are likely to occur, especially around boundaries.
+
+4. **Why Use Functional Testing**:
+   - Functional testing effectively identifies missing logic errors, is cost-effective, and can be applied at various levels (e.g., unit, integration, and system).
+   - It’s advantageous because it can be designed early in the development process and helps clarify and refine requirements.
+
+5. **Steps from Specification to Test Cases**:
+   - Decompose the specification to identify testable features.
+   - Select representative values or behaviors for each test case.
+   - Form test specifications by combining input values or model behaviors.
+   - Design, implement, and execute actual test cases.
+
+6. **Example**:
+   - For testing ticket sales software, equivalence classes were created based on age ranges with different ticket prices. This approach highlights boundary testing for each class.
+
+7. **Partitioning in Password Testing**:
+   - For a password creation feature, equivalence classes might include conditions like length requirements, presence of numbers, uppercase, and lowercase letters. Each condition forms a distinct equivalence class with specific test values.
+
+Functional testing helps ensure that software behaves as expected according to requirements, making it a foundational approach that finds issues often missed by other testing types.

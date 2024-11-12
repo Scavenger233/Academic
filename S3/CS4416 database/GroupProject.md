@@ -59,3 +59,8 @@ CREATE TABLE fan_fav_artist (
     FOREIGN KEY (artist_id) REFERENCES artists(artist_id) ON DELETE CASCADE
 );
 ```
+
+# EDR
+
+<img width="1118" alt="image" src="https://github.com/user-attachments/assets/c119d9ed-009b-4ded-9223-ab9cf3d92b7b">
+

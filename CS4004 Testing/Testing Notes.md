@@ -132,3 +132,29 @@ Here’s a summary of the key points and exam highlights from the lecture on "Fu
    - For a password creation feature, equivalence classes might include conditions like length requirements, presence of numbers, uppercase, and lowercase letters. Each condition forms a distinct equivalence class with specific test values.
 
 Functional testing helps ensure that software behaves as expected according to requirements, making it a foundational approach that finds issues often missed by other testing types.
+
+# Week 10
+
+## Statement testing
+- Statement testing: the number of semicolon ; is the number of testing statements
+- Statement coverage requires one test with **condition=true**
+- **false branch not covered**
+
+## Branch testing
+### To calculate the coverage based on the branch covered
+- Traversing all edges of a graph causes all nodes to be visited，but the converse is not true
+```java
+// || means only one condition is true, the whole statemment in the bracket is true
+if(isDigitHight || isDigitLow) {
+}
+```
+- Like the example above, all nodes/statements tested doesn't mean all edges/branches tested.
+
+## Condition coverage
+
+- each basic condition must be excuted at least once
+- coverage calculation
+<img width="1230" alt="image" src="https://github.com/user-attachments/assets/e00b0b7e-ed6b-4bbf-b812-35d748f13d3d">
+
+
+

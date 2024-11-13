@@ -69,69 +69,64 @@ CREATE TABLE concert_tickets (
 
 ```sql
 
--- Insert data into artists table
+-- Insert data for artists
 INSERT INTO artists (artist_id, artist_name, genre, debut_year) VALUES
-(1001, 'Taylor Swift', 'Pop', 2006),
-(1002, 'Ed Sheeran', 'Pop', 2011);
+(1001, 'The Beatles', 'Rock', 1960),
+(1002, 'Beyoncé', 'Pop', 1997);
 
--- Insert data into albums table
+-- Insert data for albums
 INSERT INTO albums (album_id, artist_id, album_title, release_date) VALUES
-(2001, 1001, '1989', '2014-10-27'),
-(2002, 1002, 'Divide', '2017-03-03');
+(2001, 1001, 'Abbey Road', '1969-09-26'),
+(2002, 1002, 'Lemonade', '2016-04-23');
 
--- Insert data into songs table
+-- Insert data for songs
 INSERT INTO songs (song_id, album_id, song_title, length, release_date) VALUES
-(3001, 2001, 'Shake It Off', 3.39, '2014-08-18'),
-(3002, 2001, 'Blank Space', 3.51, '2014-11-10'),
-(3003, 2002, 'Shape of You', 3.54, '2017-01-06'),
-(3004, 2002, 'Perfect', 4.23, '2017-03-03');
+(3001, 2001, 'Come Together', 4.20, '1969-09-26'),
+(3002, 2002, 'Formation', 3.26, '2016-04-23');
 
--- Insert data into concerts table
+-- Insert data for concerts
 INSERT INTO concerts (concert_id, artist_id, concert_title, location, date_of_concert) VALUES
-(4001, 1001, 'Reputation Stadium Tour', 'Atlanta', '2018-08-10'),
-(4002, 1002, 'Divide World Tour', 'New York', '2018-09-05');
+(4001, 1001, 'The Beatles Live at Shea Stadium', 'New York', '1965-08-15'),
+(4002, 1002, 'Beyoncé Formation World Tour', 'London', '2016-07-02');
 
--- Insert data into concert_songs table
-INSERT INTO concert_songs (concert_id, song_id, order_performance) VALUES
-(4001, 3001, 1),
-(4001, 3002, 2),
-(4002, 3003, 1),
-(4002, 3004, 2);
-
--- Insert data into fans table
+-- Insert data for fans
 INSERT INTO fans (fan_id, fan_name, fan_email, age) VALUES
-(5001, 'Alice Johnson', 'alice.johnson@example.com', 25),
-(5002, 'Bob Smith', 'bob.smith@example.com', 30);
+(5001, 'Alice Smith', 'alice.smith@example.com', 28),
+(5002, 'Bob Johnson', 'bob.johnson@example.com', 34);
 
--- Insert data into concert_tickets table
-INSERT INTO concert_tickets (ticket_id, concert_id, purchase_date, ticket_price, seat_zone, seat_number) VALUES
-(60001, 4001, '2018-07-01', 150.00, 'A', '12'),
-(60002, 4002, '2018-08-20', 120.00, 'B', '8');
+-- Insert data for concert tickets
+INSERT INTO concert_tickets (ticket_id, concert_id, fan_id, favourite_artist_id, purchase_date, ticket_price, seat_zone, seat_number) VALUES
+(6001, 4001, 5001, 1001, '1965-08-01', 15.00, 'A', '12'),
+(6002, 4002, 5002, 1002, '2016-06-20', 200.00, 'B', '45');
 
--- Insert data into ticket_fans table to reflect multiple fans per ticket
+-- Insert data for ticket_fans (many-to-many relationship if needed)
 INSERT INTO ticket_fans (ticket_id, fan_id) VALUES
-(60001, 5001),
-(60001, 5002),
-(60002, 5002);
+(6001, 5001),
+(6002, 5002);
 
--- Insert data into album_artists table for multiple artists per album
+-- Insert data for fan_favorite_artists (multiple favorite artists per fan)
+INSERT INTO fan_favorite_artists (fan_id, artist_id) VALUES
+(5001, 1001),
+(5002, 1002);
+
+-- Insert data for album_artists (multiple artists per album if needed)
 INSERT INTO album_artists (album_id, artist_id) VALUES
 (2001, 1001),
 (2002, 1002);
 
--- Insert data into song_artists table for multiple artists per song
-INSERT INTO song_artists (song_id, artist_id) VALUES
-(3001, 1001),
-(3003, 1002);
-
--- Insert data into concert_artists table for multiple artists per concert
+-- Insert data for concert_artists (multiple artists per concert if needed)
 INSERT INTO concert_artists (concert_id, artist_id) VALUES
 (4001, 1001),
 (4002, 1002);
 
--- Insert data into fan_favorite_artists table for multiple favorite artists per fan
-INSERT INTO fan_favorite_artists (fan_id, artist_id) VALUES
-(5001, 1001),
-(5001, 1002),
-(5002, 1002);
+-- Insert data for song_artists (multiple artists per song if needed)
+INSERT INTO song_artists (song_id, artist_id) VALUES
+(3001, 1001),
+(3002, 1002);
+
+-- Insert data for concert_songs (songs performed in concerts)
+INSERT INTO concert_songs (concert_id, song_id, order_performance) VALUES
+(4001, 3001, 1),
+(4002, 3002, 1);
+
 ```

@@ -38,7 +38,7 @@ CREATE TABLE concerts (
   FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 );
 
--- Multiple artists per album
+-- !!!Multiple artists per album
 CREATE TABLE album_artists (
   album_id INTEGER(10),
   artist_id INTEGER(10),
@@ -47,7 +47,7 @@ CREATE TABLE album_artists (
   FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 );
 
--- Multiple artists per song
+-- !!!Multiple artists per song
 CREATE TABLE song_artists (
   song_id INTEGER(10),
   artist_id INTEGER(10),
@@ -56,7 +56,7 @@ CREATE TABLE song_artists (
   FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 );
 
--- Multiple artists per concert
+-- !!!Multiple artists per concert
 CREATE TABLE concert_artists (
   concert_id INTEGER(10),
   artist_id INTEGER(10),
@@ -88,7 +88,7 @@ CREATE TABLE concert_tickets (
   FOREIGN KEY (favourite_artist_id) REFERENCES artists(artist_id)
 );
 
--- Multiple fans per ticket (many-to-many relationship)
+-- !!!Multiple fans per ticket (many-to-many relationship)
 CREATE TABLE ticket_fans (
   ticket_id INTEGER(10),
   fan_id INTEGER(10),
@@ -97,7 +97,7 @@ CREATE TABLE ticket_fans (
   FOREIGN KEY (fan_id) REFERENCES fans(fan_id)
 );
 
--- Multiple favorite artists per fan
+-- !!!Multiple favorite artists per fan
 CREATE TABLE fan_favorite_artists (
   fan_id INTEGER(10),
   artist_id INTEGER(10),

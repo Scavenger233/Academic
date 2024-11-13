@@ -1,7 +1,44 @@
 # Modified_schma
 ```sql
 
--- for multiple artists per album
+-- Artists table
+CREATE TABLE artists (
+  artist_id INTEGER(10) PRIMARY KEY,
+  artist_name VARCHAR(128),
+  genre VARCHAR(64),
+  debut_year YEAR
+);
+
+-- Albums table
+CREATE TABLE albums (
+  album_id INTEGER(10) PRIMARY KEY,
+  artist_id INTEGER(10),
+  album_title VARCHAR(256),
+  release_date DATE,
+  FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+);
+
+-- Songs table
+CREATE TABLE songs (
+  song_id INTEGER(10) PRIMARY KEY,
+  album_id INTEGER(10),
+  song_title VARCHAR(128),
+  length REAL,
+  release_date DATE,
+  FOREIGN KEY (album_id) REFERENCES albums(album_id)
+);
+
+-- Concerts table
+CREATE TABLE concerts (
+  concert_id INTEGER(10) PRIMARY KEY,
+  artist_id INTEGER(10),
+  concert_title VARCHAR(256),
+  location VARCHAR(256),
+  date_of_concert DATE,
+  FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
+);
+
+-- Multiple artists per album
 CREATE TABLE album_artists (
   album_id INTEGER(10),
   artist_id INTEGER(10),
@@ -10,7 +47,7 @@ CREATE TABLE album_artists (
   FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 );
 
--- for multiple artists per song
+-- Multiple artists per song
 CREATE TABLE song_artists (
   song_id INTEGER(10),
   artist_id INTEGER(10),
@@ -19,7 +56,7 @@ CREATE TABLE song_artists (
   FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 );
 
--- for multiple artists per concert
+-- Multiple artists per concert
 CREATE TABLE concert_artists (
   concert_id INTEGER(10),
   artist_id INTEGER(10),
@@ -28,24 +65,30 @@ CREATE TABLE concert_artists (
   FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 );
 
--- for multiple favorite artists per fan
-CREATE TABLE fan_favorite_artists (
-  fan_id INTEGER(10),
-  artist_id INTEGER(10),
-  PRIMARY KEY (fan_id, artist_id),
-  FOREIGN KEY (fan_id) REFERENCES concert_tickets(fan_id),
-  FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
-);
-
--- for multiple fans per ticket_id
--- Create fan table
+-- Fans table
 CREATE TABLE fans (
   fan_id INTEGER(10) PRIMARY KEY,
   fan_name VARCHAR(128),
   fan_email VARCHAR(128),
   age TINYINT(3)
 );
--- make fans and tickets many to many
+
+-- Concert tickets table (store only fan_id to maintain consistency)
+CREATE TABLE concert_tickets (
+  ticket_id INTEGER(10) PRIMARY KEY,
+  concert_id INTEGER(10),
+  fan_id INTEGER(10),
+  favourite_artist_id INTEGER(10),
+  purchase_date DATE,
+  ticket_price DOUBLE,
+  seat_zone VARCHAR(16),
+  seat_number VARCHAR(16),
+  FOREIGN KEY (concert_id) REFERENCES concerts(concert_id),
+  FOREIGN KEY (fan_id) REFERENCES fans(fan_id),
+  FOREIGN KEY (favourite_artist_id) REFERENCES artists(artist_id)
+);
+
+-- Multiple fans per ticket (many-to-many relationship)
 CREATE TABLE ticket_fans (
   ticket_id INTEGER(10),
   fan_id INTEGER(10),
@@ -53,16 +96,25 @@ CREATE TABLE ticket_fans (
   FOREIGN KEY (ticket_id) REFERENCES concert_tickets(ticket_id),
   FOREIGN KEY (fan_id) REFERENCES fans(fan_id)
 );
--- make per ticket_id to many fans
-CREATE TABLE concert_tickets (
-  ticket_id INTEGER(10) PRIMARY KEY,
-  concert_id INTEGER(10),
-  purchase_date DATE,
-  ticket_price DOUBLE,
-  seat_zone  VARCHAR(16),
-  seat_number VARCHAR(16),
-  FOREIGN KEY (concert_id) REFERENCES concerts(concert_id)
+
+-- Multiple favorite artists per fan
+CREATE TABLE fan_favorite_artists (
+  fan_id INTEGER(10),
+  artist_id INTEGER(10),
+  PRIMARY KEY (fan_id, artist_id),
+  FOREIGN KEY (fan_id) REFERENCES fans(fan_id),
+  FOREIGN KEY (artist_id) REFERENCES artists(artist_id)
 );
+
+-- Songs performed in concerts
+CREATE TABLE concert_songs (
+  concert_id INTEGER(10),
+  song_id INTEGER(10),
+  order_performance TINYINT(4),
+  FOREIGN KEY (concert_id) REFERENCES concerts(concert_id),
+  FOREIGN KEY (song_id) REFERENCES songs(song_id)
+);
+
 ```
 
 # data.sql

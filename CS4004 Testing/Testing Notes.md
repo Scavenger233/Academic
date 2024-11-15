@@ -178,4 +178,15 @@ if(isDigitHight || isDigitLow) {
     Y = x + 5'
     print(x)
     ```
+## DU pair
+- A pair of definition and use for some variable, such that at least one DU path exista from the definition to the use
 
+## DU path
+- A **definition-clear** path on the CFG sarting from a definition to a use of the same variable
+  - Definition-clear: value is not replaced on path **(You can't re-define the value)**
+
+## DU pair的判断准则
+- 先definition，后 use
+- 中间不能有第二个definition
+- 中间不能有第二个use
+- 考虑中间while/if等代码是否实现，会给DU path带来的影响

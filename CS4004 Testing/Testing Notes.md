@@ -157,4 +157,25 @@ if(isDigitHight || isDigitLow) {
 <img width="1230" alt="image" src="https://github.com/user-attachments/assets/e00b0b7e-ed6b-4bbf-b812-35d748f13d3d">
 
 
+# Data Flow Testing
+
+- Definition: A tyoe of structure/white box testing focused on selecting test paths through a program based on **definition and use of variables**
+
+## Definition and Use
+
+### Definition
+- Definition: A **location** in the code where a value for a **variable is stored in memory**
+
+### Use
+- Definition: A **location** in the code where the value of a **variable is accessed**
+  - p-use: A use where the value of a variable froms a **predicate**, i.e. the basis for decision
+  - ```java
+    if (x > 10) {
+    }
+    ```
+  - c-use: A use where the value of a variable froms part of a **computation**
+  - ```python
+    Y = x + 5'
+    print(x)
+    ```
 

@@ -20,7 +20,7 @@
 ---
 
 #### **Speaker Notes (Script for Delivery)**:  
-
+micro也是大势所趋，上图表
 "Microservices are a modern way to design software by breaking it into small, independent services. Each service is designed to do one thing really well, and they communicate with each other through APIs.  
 
 Microservices are built to scale—they can handle increased traffic by replicating specific services as needed. They’re also flexible, letting us adapt individual services to new requirements without affecting the rest of the system.  

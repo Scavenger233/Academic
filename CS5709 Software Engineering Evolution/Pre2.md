@@ -7,7 +7,7 @@
 #### **Slide Content** (Text on PPT):
 **Title**: "What Are Microservices?"  
 **Key Points**:  
-- **Definition**: Independent, modular components working together as a system.  
+- **Definition**: Independent, modular components working together as a system.  //找原文贴进来
 - **Key Characteristics**:  
   - **Scalable**: Easily handle increasing loads.  
   - **Flexible**: Adapt to changing requirements.  
@@ -34,7 +34,7 @@ Another key feature is maintainability. Since each service is smaller, updates a
 #### **Slide Content** (Text on PPT):  
 **Title**: "Spring Boot: Powering Microservices"  
 **Key Points**:  
-- **Definition**: Framework simplifying the development of Java-based microservices.  
+- **Definition**: //找原文  
 - **Key Characteristics**:  
   - **Rapid Development**: Pre-configured templates and dependencies.  
   - **Modular**: Supports small, focused services.  

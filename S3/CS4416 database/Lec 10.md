@@ -268,3 +268,34 @@ CALL LaptopPriceAdjustment('D'); -- Adjusts prices for maker 'D'
 - The prices for other laptops remain unchanged.
 
 This demonstrates how to combine **cursors**, **functions**, and **conditional logic** effectively in stored procedures.
+
+### **Explanation of Cursor Loops with SQLSTATE Handling**
+
+In PSM (Persistent Stored Modules), when using a **cursor** inside a loop, you need to handle the case where the cursor has no more rows to fetch. This is typically done using SQLSTATE or by declaring a **condition** to check specific SQLSTATE values.
+
+---
+
+### **Key Concepts:**
+
+1. **SQLSTATE:**
+   - A 5-character string updated after each SQL operation.
+   - **`02000`** means "No more rows found."
+
+2. **Condition Declaration:**
+   - You can declare a **condition** to represent a specific SQLSTATE value.
+   - Example:
+     ```sql
+     DECLARE NotFound CONDITION FOR SQLSTATE '02000';
+     ```
+
+3. **Cursor Loop Structure:**
+   - Use `FETCH` to get the next tuple.
+   - Use `NotFound` or SQLSTATE to exit the loop when there are no more rows.
+
+
+---
+
+### **Key Benefits:**
+- **SQLSTATE or Conditions:** Ensure graceful handling of the cursor’s end.
+- **Flexible Processing:** Allows you to process each tuple independently.
+- **Scalable:** Useful for large datasets where row-by-row processing is needed.

@@ -15,7 +15,9 @@
   - Update: commit-push
  
 - If your branch name is master
-```
+
+
+```bash
 git branch --show-current
 git branch --move master main
 git branch -- shouw-current

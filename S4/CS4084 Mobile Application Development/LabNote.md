@@ -4,6 +4,8 @@
   - Android studio install
 
 # Feb-11 Hello World
+- [project repo](https://github.com/YimingLi233/HelloWorld.git)
+
 - Configure Android Studio
   - Settings-Git-version control-Git-set Path to Git executable:
  
@@ -22,3 +24,11 @@ git branch --show-current
 git branch --move master main
 git branch -- shouw-current
 ```
+
+# Feb-18 Activities & Intents
+- Activity[project repo]（https://github.com/YimingLi233/ActivityLifecycle.git）
+**Learning Objectives**  
+After this exercise, you will be able to:
+- observe the Activity lifecycle in action;
+- create a multiple-activity app using Intents
+
